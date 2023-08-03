@@ -4,11 +4,15 @@ import com.alibaba.druid.pool.DruidDataSource;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.TransactionManager;
 
 import javax.sql.DataSource;
 
@@ -34,6 +38,12 @@ public class DataSourceConfig {
     //spEL ->spring expression  language
     private int cpuCount;
 
+    @Bean
+    public TransactionManager dataSourceTransactionManager(@Autowired @Qualifier(value = "druidDataSource") DataSource ds){
+        DataSourceTransactionManager tx=new DataSourceTransactionManager();
+        tx.setDataSource(ds);
+        return tx;
+    }
     //参数:第三方的框架中的类 由@Bean托管
     @Bean(initMethod = "init",destroyMethod = "close")//DruidDataSource中提供了  init初始化方法
     public DruidDataSource druidDataSource(){
