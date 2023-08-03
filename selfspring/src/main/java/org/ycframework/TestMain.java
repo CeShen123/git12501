@@ -1,7 +1,7 @@
 package org.ycframework;
 
 import com.yc.MyConfig;
-import com.yc.UserBiz;
+import com.yc.service.UserBiz;
 import org.ycframework.context.YcAnnotationConfigApplicationContext;
 import org.ycframework.context.YcApplicationContext;
 

@@ -1,0 +1,2 @@
+16:01:51.806 INFO  com.yc.configs.DataSourceConfig 47 druidDataSource - 配置druid的连接池大小24
+16:01:52.109 INFO  com.alibaba.druid.support.logging.Log4j2Impl 106 info - {dataSource-1} inited
