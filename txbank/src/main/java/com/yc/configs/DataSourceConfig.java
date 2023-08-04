@@ -13,6 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.TransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -20,6 +21,7 @@ import javax.sql.DataSource;
 @PropertySource("classpath:db.properties")
 @Data //lombok创建get/set方法
 @Log4j2
+@EnableTransactionManagement
 public class DataSourceConfig {
 
     //利用Di将db.properties的内容注入
@@ -39,7 +41,7 @@ public class DataSourceConfig {
     private int cpuCount;
 
     @Bean
-    public TransactionManager dataSourceTransactionManager(@Autowired @Qualifier(value = "druidDataSource") DataSource ds){
+    public TransactionManager dataSourceTransactionManager(@Autowired @Qualifier(value = "dataSource") DataSource ds){
         DataSourceTransactionManager tx=new DataSourceTransactionManager();
         tx.setDataSource(ds);
         return tx;
@@ -77,7 +79,6 @@ public class DataSourceConfig {
         dataSource.setUrl(url);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
-
         return dataSource;
     }
 }

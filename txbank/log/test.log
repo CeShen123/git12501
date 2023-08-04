@@ -1,8 +1,7 @@
-19:39:39.568 INFO  com.yc.configs.DataSourceConfig 57 druidDataSource - 配置druid的连接池大小24
-19:39:39.866 INFO  com.alibaba.druid.support.logging.Log4j2Impl 106 info - {dataSource-1} inited
-19:39:39.927 INFO  com.yc.Test2_DataSourceConfig 62 testDBCCPConnection - com.mysql.cj.jdbc.ConnectionImpl@6e1d8f9e
-19:39:39.932 INFO  com.yc.Test2_DataSourceConfig 48 testTransactionManager - org.springframework.jdbc.datasource.DataSourceTransactionManager@40e10ff8
-19:39:39.938 INFO  com.yc.Test2_DataSourceConfig 55 testDruidDataSource - com.mysql.cj.jdbc.ConnectionImpl@4b3c354a	24
-19:39:39.940 INFO  com.yc.Test2_DataSourceConfig 80 testEnvironment - 123456	C:\Users\86185
-19:39:39.975 INFO  com.yc.Test2_DataSourceConfig 69 testDbcpDataSource - 1592840862, URL=jdbc:mysql://localhost:3306/db_bank?useSSL=false, MySQL Connector/J
-19:39:39.977 INFO  com.yc.Test2_DataSourceConfig 75 testPropertySource - root
+11:20:56.355 INFO  com.yc.configs.DataSourceConfig 59 druidDataSource - 配置druid的连接池大小24
+11:20:56.638 INFO  com.alibaba.druid.support.logging.Log4j2Impl 106 info - {dataSource-1} inited
+11:20:56.751 INFO  com.yc.biz.AccountBizImplTest 33 openAccount - Account(accountid=9, money=100.0)
+11:20:56.769 INFO  com.yc.biz.AccountBizImplTest 48 withdraw - Account(accountid=7, money=198.0)
+11:20:56.774 INFO  com.yc.biz.AccountBizImplTest 26 findAccount - Account(accountid=1, money=46960.0)
+11:20:56.785 INFO  com.yc.biz.AccountBizImplTest 40 deposite - Account(accountid=1, money=46970.0)
+11:20:56.796 INFO  com.yc.biz.AccountBizImplTest 56 transfer - Account(accountid=1, money=93830.0)
